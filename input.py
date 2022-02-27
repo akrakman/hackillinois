@@ -1,4 +1,4 @@
-from numpy import average
+from numpy import average, double
 import pandas as pd
 import csv
 
@@ -9,21 +9,26 @@ while(yes == 'y'):
     classes.append((name, num, prof))
     yes = input("Enter 'y' if you want to add another class: ")
 
-with open('output.csv') as csv_file:
+with open('averagegpa.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
     line_count = 0
+    average = 0
+    total = 0
+    list = []
     for row in csv_reader:
-        ##print(row[7])
         if line_count == 0:
             #print(f'Column names are {", ".join(row)}')
             line_count += 1
-        elif row[7] == prof:
-            #get average grade
-            course = row[6]
-            print(prof, course)
-            #average = row[23]
-            break
-        #NOW WE HAVE AVERAGE GPA, PROF, COURSE!!
+        elif row[6] == prof:
+            total += 1
+            course = row[5]
+            average += double(row[21])
+            list.append(prof)
+            list.append(course)
+    average = round(average / total, 2)
+    list.append(average)
+    print(list)
+
             
                 
 
