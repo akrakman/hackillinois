@@ -1,0 +1,11 @@
+
+name1, prof1 = input("Enter the course number and professor name: ").split(",")
+name2, prof2 = input("Enter the course number and professor name: ").split(",")
+name3, prof3 = input("Enter the course number and professor name: ").split(",")
+name4, prof4 = input("Enter the course number and professor name: ").split(",")
+name5, prof5 = input("Enter the course number and professor name: ").split(",")
+class1 = (name1, prof1)
+class2 = (name2, prof2)
+class3 = (name3, prof3)
+class4 = (name4, prof4)
+class5 = (name5, prof5)
