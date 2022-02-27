@@ -21,9 +21,6 @@ class RateMyProfScraper:
                 temp_list = temp_jsonpage['professors']
                 tempprofessorlist.extend(temp_list)
                 i += 1
-                print(num_of_pages)
-                print(i)
-                
             return tempprofessorlist
 
         def GetNumOfProfessors(self,id):  # function returns the number of professors in the university of the given ID.
