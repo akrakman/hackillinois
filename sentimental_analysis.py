@@ -1,10 +1,14 @@
+from numpy import average, number
 from textblob import TextBlob
 
 class ScaleUtilities:
     average = 0
     number = 0
+
+    def __init__(self, string, number):
+        self.string = string
+
     def get_sentiment_of(string):
-        
         return TextBlob(string).sentiment.polarity * 5
 
     def get_subjectivity_of(string):
@@ -18,6 +22,8 @@ class ScaleUtilities:
         return
 
     def average_opinion():
+        number = 0
+        average = 0
         if (number == 0):
             print("You idiot")
             exit(1)
