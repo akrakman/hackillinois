@@ -5,11 +5,16 @@ class ScaleUtilities:
     number = 0
     def get_sentiment_of(string):
         polarity = TextBlob(string).sentiment.polarity * 5
-        number++
+        number += 1
         average += polarity
         return polarity
 
     def get_subjectivity_of(string):
         subjectivity = TextBlob(string).sentiment.subjectivity * 5
         return
-    def
+
+    def average_opinion():
+        if (number == 0):
+            print("You idiot")
+            exit(1)
+        return average / number
