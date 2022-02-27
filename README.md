@@ -2,4 +2,7 @@
 
 Schedule Difficulty Meter:
 
-Using pushshift api
+Using:
+-Pushshift api
+-RateMyProfessor
+-Reddit.com

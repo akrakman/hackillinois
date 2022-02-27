@@ -4,6 +4,10 @@ class ScaleUtilities:
     average = 0
     number = 0
     def get_sentiment_of(string):
+        
+        return TextBlob(string).sentiment.polarity * 5
+
+    def get_subjectivity_of(string):
         polarity = TextBlob(string).sentiment.polarity * 5
         number += 1
         average += polarity
