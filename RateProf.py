@@ -2,29 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import math
-'''
-MIT License
-
-Copyright (c) 2018 Rodantny Reyes
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-'''
 class RateMyProfScraper:
         def __init__(self,schoolid):
             self.UniversityId = schoolid
@@ -36,7 +13,7 @@ class RateMyProfScraper:
             num_of_prof = self.GetNumOfProfessors(self.UniversityId)
             num_of_pages = math.ceil(num_of_prof / 20)
             i = 1
-            while (i <= num_of_pages):# the loop insert all professor into list
+            while (i <= num_of_pages): # the loop insert all professor into list
                 page = requests.get("http://www.ratemyprofessors.com/filter/professor/?&page=" + str(
                     i) + "&filter=teacherlastname_sort_s+asc&query=*%3A*&queryoption=TEACHER&queryBy=schoolId&sid=" + str(
                     self.UniversityId))
@@ -44,9 +21,6 @@ class RateMyProfScraper:
                 temp_list = temp_jsonpage['professors']
                 tempprofessorlist.extend(temp_list)
                 i += 1
-                print(num_of_pages)
-                print(i)
-                
             return tempprofessorlist
 
         def GetNumOfProfessors(self,id):  # function returns the number of professors in the university of the given ID.
