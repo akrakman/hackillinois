@@ -1,19 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-'''
-url = 'https://www.ratemyprofessors.com/ShowRatings.jsp?tid=1986099'
-
-page = requests.get(url)
-
-soup = BeautifulSoup(page.text, "html.parser")
-
-
-proftags = soup.findAll("span", {"class": "tag-box-choosetags" })
-
-for mytag in proftags:
-  print(mytag.get_text())
-
-'''
 import json
 import math
 
@@ -47,7 +33,7 @@ class RateMyProfScraper:
                     id))  # get request for page
             temp_jsonpage = json.loads(page.content)
             num_of_prof = temp_jsonpage[
-                              'remaining'] + 20  # get the number of professors at William Paterson University
+                              'remaining'] + 20  # get the number of professors
             return num_of_prof
 
         def SearchProfessor(self, ProfessorName):
@@ -76,10 +62,6 @@ class RateMyProfScraper:
                 return self.professorlist[self.indexnumber][key]
 
 
-WilliamPatersonUniversity = RateMyProfScraper(1112)
-WilliamPatersonUniversity.SearchProfessor("Geoffrey Challen")
-WilliamPatersonUniversity.PrintProfessorDetail("overall_rating")
-
-#MassInstTech = RateMyProfScraper(580)
-#MassInstTech.SearchProfessor("Robert Berwick")
-#MassInstTech.PrintProfessorDetail("overall_rating")
+UIUC = RateMyProfScraper(1112)
+UIUC.SearchProfessor("Geoffrey Challen")
+UIUC.PrintProfessorDetail("overall_rating")
