@@ -1,5 +1,10 @@
-def get_sentiment_of(string):
-    return TextBlob(string).sentiment.polarity
+from textblob import TextBlob
 
-def get_subjectivity_of(string):
-    return TextBlob(string).sentiment.subjectivity
+class ScaleUtilities:
+
+    def get_sentiment_of(string):
+        return TextBlob(string).sentiment.polarity * 5
+
+    def get_subjectivity_of(string):
+        return TextBlob(string).sentiment.subjectivity * 5
+    def
