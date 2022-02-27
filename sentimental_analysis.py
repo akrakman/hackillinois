@@ -8,9 +8,6 @@ class ScaleUtilities:
     def __init__(self, string, number):
         self.string = string
 
-    def get_sentiment_of(string):
-        return TextBlob(string).sentiment.polarity * 5
-
     def get_subjectivity_of(string):
         polarity = TextBlob(string).sentiment.polarity * 5
         number += 1
