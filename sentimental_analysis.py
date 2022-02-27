@@ -22,8 +22,6 @@ class ScaleUtilities:
         return
 
     def average_opinion():
-        number = 0
-        average = 0
         if (number == 0):
             print("You idiot")
             exit(1)
